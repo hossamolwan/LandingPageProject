@@ -1,31 +1,14 @@
-/**
- * Dependencies: None
- * 
- * JS Version: ES2015/ES6
- * 
- * JS Standard: ESlint
- * 
-*/
 
-/**
- * Model start
- * model holds all the data associated with the page 
-*/
+/* model holds all the data associated with the page*/
 let model = {
     NAVBARHEIGHT: '55px'
 }
 
-/**
- * End model
-*/
+/*End mode*/
 
 
-/**
- * Octopus start
- * Octopus is the link between the model and the view 
-*/
-
-const octopus = {
+/*link between the model and the view*/
+const hossam = {
     init: () => {
         view.init();
     },
@@ -33,15 +16,11 @@ const octopus = {
     getNavbarHeight: () => model.NAVBARHEIGHT,
 }
 /**
- * End octopus
+ * End of the link
 */
 
 
-/**
- * View start
- * View is responsible of manipulating the DOM and will access the data
- * stored in the model through the octopus 
-*/
+/* View is responsible of manipulating the DOM and will access the data*/
 
 const view = {
     // start main function
@@ -109,7 +88,7 @@ const view = {
             // Hide and show the navbar
             if (firstScroll) {
                 if (currPosition - prevPosition > 50) {
-                    nav.style.top = '-' + octopus.getNavbarHeight();
+                    nav.style.top = '-' + hossam.getNavbarHeight();
                     prevPosition = currPosition;
                     firstScroll = false;
                 } else if (prevPosition - currPosition > 50) {
@@ -169,13 +148,8 @@ const view = {
         }
     }
 
-};
-
-/**
- * Init the application
-*/
-octopus.init();
-
+}
+/* section collapse*/
 var coll = document.getElementsByClassName("collapsible");
 var i;
 
@@ -190,3 +164,6 @@ for (i = 0; i < coll.length; i++) {
     }
   });
 }
+/*Init the application*/
+hossam.init();
+
